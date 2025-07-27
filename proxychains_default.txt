@@ -1,0 +1,5 @@
+random_chain
+
+chain_len = 1
+
+proxy_dns

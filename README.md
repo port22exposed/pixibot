@@ -4,4 +4,4 @@ pixibot is a Discord self-bot for managing Discord servers and holding them inca
 
 ## Source Conditions
 
-This project is licensed under the <a href="./LICENSE">European Union Public License (EUPL), version 1.2</a> or later.
+This project is licensed under the [European Union Public License (EUPL), version 1.2](./LICENSE) or later.

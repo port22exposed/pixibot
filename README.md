@@ -1,15 +1,7 @@
 # pixibot
 
-To install dependencies:
+pixibot is a Discord self-bot for managing Discord servers and holding them incase of termination or a group sharing full ownership of a Discord.
 
-```bash
-bun install
-```
+## Source Conditions
 
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.2.18. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+This project is licensed under the <a href="./LICENSE">European Union Public License (EUPL), version 1.2</a> or later.

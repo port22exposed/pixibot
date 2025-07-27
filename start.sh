@@ -1,1 +1,1 @@
-proxychains4 -f ./socks5_proxies.txt node ./src/index.ts
+proxychains4 node ./src/index.ts

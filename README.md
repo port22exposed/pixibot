@@ -1,6 +1,6 @@
 # pixibot
 
-pixibot is a Discord self-bot for managing Discord servers and holding them incase of termination or a group sharing full ownership of a Discord.
+pixibot is a Discord self-bot for managing Discord servers and holding them incase of termination or a group sharing full ownership of a Discord server.
 
 ## Source Conditions
 

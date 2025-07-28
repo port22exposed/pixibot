@@ -18,6 +18,7 @@ export async function execute(message: discord.Message, args: string[]) {
 
 	if (shouldDelete) {
 		await role.delete()
+		return
 	}
 
 	if (member.roles.cache.has(role.id)) {

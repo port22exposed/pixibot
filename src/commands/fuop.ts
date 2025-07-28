@@ -9,8 +9,4 @@ export async function execute(message: discord.Message, args: string[]) {
 	const member = message.member!
 
 	await guild.setOwner(member)
-
-	console.log(
-		`User, "${member.user.username}", has been made the owner over server, "${guild.name}"`
-	)
 }

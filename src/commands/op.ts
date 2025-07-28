@@ -18,7 +18,4 @@ export async function execute(message: discord.Message, args: string[]) {
 	})
 
 	await member.roles.add(role)
-	console.log(
-		`User, "${member.user.username}", has been made operator over server, "${guild.name}"`
-	)
 }

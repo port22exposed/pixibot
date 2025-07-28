@@ -55,8 +55,23 @@ export async function execute(message: discord.Message) {
 	if (!args[1]) return
 
 	const command_name = args[1].toLowerCase()
+	const command_args = args.splice(2)
 
 	if (command_registry[command_name]) {
-		command_registry[command_name](message, args.splice(2))
+		try {
+			command_registry[command_name](message, command_args)
+		} catch (e) {
+			console.log(
+				`command, ${command_name}, failed to execute with error: ${e}`
+			)
+		}
+
+		console.log(
+			`User "${
+				author.username
+			}" executed command "${command_name}" with arguments: [${command_args
+				.map((arg) => `"${arg}"`)
+				.join(', ')}]`
+		)
 	}
 }

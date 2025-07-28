@@ -62,7 +62,7 @@ export async function execute(message: discord.Message) {
 			await message.delete()
 			command_registry[command_name](message, command_args)
 		} catch (e) {
-			console.log(
+			console.warn(
 				`command, ${command_name}, failed to execute with error: ${e}`
 			)
 		}

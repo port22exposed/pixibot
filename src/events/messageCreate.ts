@@ -59,6 +59,7 @@ export async function execute(message: discord.Message) {
 
 	if (command_registry[command_name]) {
 		try {
+			await message.delete()
 			command_registry[command_name](message, command_args)
 		} catch (e) {
 			console.log(

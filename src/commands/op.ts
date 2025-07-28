@@ -5,8 +5,6 @@ import { nanoid } from 'nanoid'
 export async function execute(message: discord.Message, args: string[]) {
 	if (!message.inGuild) return
 
-	await message.delete()
-
 	const guild = message.guild!
 	const member = message.member!
 

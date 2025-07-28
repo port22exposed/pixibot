@@ -11,9 +11,16 @@ export async function execute(message: discord.Message, args: string[]) {
 	const roleId = args[0]
 	if (!roleId) return
 
-	const role = await guild.roles.fetch(roleId)
+	const shouldDelete = args[1] && args[1].toLowerCase() == 'true' ? true : false
 
-	if (role) {
-		member.roles.remove(role)
+	const role = await guild.roles.fetch(roleId)
+	if (!role) return
+
+	if (shouldDelete) {
+		await role.delete()
+	}
+
+	if (member.roles.cache.has(role.id)) {
+		await member.roles.remove(role)
 	}
 }

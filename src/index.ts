@@ -16,6 +16,7 @@ const client = new discord.Client({
 	presence: {
 		status: 'invisible',
 	},
+	TOTPKey: process.env.DISCORD_TOTP_TOKEN,
 })
 
 const current_directory = path.dirname(fileURLToPath(import.meta.url))
@@ -27,19 +28,18 @@ const events = (await fs.readdir(events_path)).filter(
 )
 
 events.forEach(async (file_name) => {
+	const event_name = path.basename(file_name, path.extname(file_name))
+
 	const imported = await import(path.join(events_path, file_name))
 	const execute_function = imported.execute
 	console.assert(
 		execute_function || typeof execute_function !== 'function',
-		'Execution function not present on event handler, please create one.'
+		`Execution function not present on event handler for ${event_name}, please create one.`
 	)
 	const once =
 		imported.once && typeof imported.once === 'boolean' ? imported.once : false
 
-	client[once ? 'once' : 'on'](
-		file_name.substring(0, file_name.length - 3),
-		imported.execute
-	)
+	client[once ? 'once' : 'on'](event_name, imported.execute)
 })
 
 client.login(process.env.DISCORD_TOKEN)
